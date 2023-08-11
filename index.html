@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'blue-500': '#02368A',
+            }
+          }
+        }
+      }
+    </script>
+    <title>Acceuil</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body class="flex h-screen justify-center items-center">
+    <div
+      class="bg-white w-[40rem] flex overflow-hidden  h-[50rem] rounded-lg shadow-md"
+    >
+      <!-- <div class="bg-hero flex-none"></div> -->
+
+      <div class="p-10 flex flex-col items-center justify-center space-y-16 ">
+
+        <img src="assets/logo.png" class="h-52" alt="">
+
+        <h1 class="font-medium text-3xl text-center">
+          Comparez plusieurs offres d'assurance et économisez sur vos factures
+        </h1>
+
+        <a href="./formulaire2.html">
+
+          <button
+          id="bouton-validation"
+          type="button"
+       
+          class=" bg-blue-500 px-9 py-5 rounded-lg text-white "
+        >
+          Commencer 
+        </button>
+        </a>
+      
+      </div>
+    </div>
+
+    <script>
+      // Fonction pour changer le fond de la div avec une image différente
+      function changerFondDiv(cheminImage) {
+        var maDiv = document.querySelector(".bg-hero");
+        maDiv.style.backgroundImage = "url('" + cheminImage + "')"; // Chemin vers l'image de fond au survol
+      }
+    </script>
+
+    <!-- <script>
+      document
+        .getElementById("mon-bouton")
+        .addEventListener("click", function () {
+          // Les données que vous souhaitez envoyer à la page 2
+          var nom = "John";
+          var age = 30;
+
+          // Construire l'URL avec les paramètres des données
+          var url =
+            "formulaire.html?nom=" +
+            encodeURIComponent(nom) +
+            "&age=" +
+            encodeURIComponent(age);
+
+          // Rediriger vers la page 2 avec les données
+          window.location.href = url;
+        });
+    </script> -->
+  </body>
+</html>

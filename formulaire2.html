@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'blue-500': '#02368A',
+                    }
+                }
+            }
+        }
+    </script>
+    <title>Formulaire</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="flex items-center justify-center min-h-screen">
+    <div class="w-[50rem] flex flex-col overflow-hidden items-start space-y-5 py-10 rounded-lg">
+        <button onclick="returnToHome()" class="flex items-center space-x-3">
+            <svg width="20" height="20" class="svg" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#6b7280" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z" />
+                <path fill="#6b7280"
+                    d="m237.248 512l265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z" />
+            </svg>
+            <span class="text-xl" style="color: white;">Retour</span>
+
+        </button>
+
+        <form id="form-vehicule" method="get" action="./resultat.html"
+            class="bg-white text-black w-full flex flex-col space-y-8 overflow-auto h-full p-20 rounded-lg shadow-md ">
+            <h2 class="font-semibold text-3xl">Responsabilité civil et DR</h2>
+            <p>Veuillez remplir le formulaire ci-dessous.</p>
+            <div class="flex flex-col space-y-9">
+                <div id="champ" class="p-2 space-y-3 flex flex-col ">
+                    <label>
+                        <span class="block text-sm font-medium text-slate-700">
+                            Quelle est la puissance du moteur de votre véhicule ?
+                        </span>
+                        <select id="pays" name="pays"
+                            class="form-select w-full py-2 px-4 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                            <option value="" disabled selected>Sélectionnez une puissance</option>
+                            <option value="france">Option1</option>
+                            <option value="canada">Option2</option>
+                            <option value="belgique">Option3</option>
+                            <!-- Ajoutez plus d'options ici si nécessaire -->
+                        </select>
+                    </label>
+                    <!-- <button class="self-end bg-blue-500 px-3 py-2 rounded-lg text-white">Continuer</button> -->
+                </div>
+                <div id="champ" class="p-2 space-y-3 flex flex-col hidden ">
+                    <label class="block">
+                        <span class="block text-sm font-medium text-slate-700">
+                            Quelle est la source d'energie de votre véhicule ?
+                        </span>
+                        <select id="pays" name="pays"
+                            class="form-select w-full py-2 px-4 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                            <option value="" disabled selected>Sélectionnez la source d'energie </option>
+                            <option value="france">Option1</option>
+                            <option value="canada">Option2</option>
+                            <option value="belgique">Option3</option>
+                            <!-- Ajoutez plus d'options ici si nécessaire -->
+                        </select>
+                        <!-- <button class="self-end bg-blue-500 px-3 py-2 rounded-lg text-white">Continuer</button> -->
+                </div>
+
+                <div id="champ" class="space-y-3 hidden input-text">
+
+                    <label class="block">
+                        <span class="block text-sm font-medium text-slate-700">
+                            Nom et prenoms
+                        </span>
+                        <input type="text" name="valNew"
+                            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 duration-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    </label>
+
+                </div>
+
+                <div id="champ" class="space-y-3 hidden input-text">
+
+                    <label class="block">
+                        <span class="block text-sm font-medium text-slate-700">
+                            Ville
+                        </span>
+                        <input type="text" name="valNew"
+                            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 duration-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    </label>
+
+                </div>
+
+                <div id="champ" class="space-y-3 hidden input-text">
+
+                    <label class="block">
+                        <span class="block text-sm font-medium text-slate-700">
+                            Nnumero de telephone
+                        </span>
+                        <input type="text" name="valNew"
+                            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 duration-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    </label>
+
+                </div>
+
+
+                <div id="champ" class="space-y-3 hidden ">
+
+                    <label class="block">
+                        <span class="block text-sm font-medium text-slate-700">
+                            Carte grise
+                        </span>
+                        <input type="file" name="valNew"
+                            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 duration-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    </label>
+
+                </div>
+                <div id="champ" class="space-y-3 hidden input-radio">
+                    <h3>Voulez-vous prendre un recours anticipé ?</h3>
+                    <div class="space-x-5 flex">
+                        <div>
+                            <input id="ouiRecA" class="peer/ouiRecA hidden" type="radio" name="assuranceIncendie" />
+                            <label for="ouiRecA"
+                                class="peer-checked/ouiRecA:bg-blue-500 peer-checked/ouiRecA:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span>Oui</span>
+                            </label>
+                        </div>
+                        <div>
+                            <input id="nonRecA" class="peer/nonRecA hidden" type="radio" name="assuranceIncendie" />
+                            <label for="nonRecA"
+                                class="peer-checked/nonRecA:bg-blue-500 peer-checked/nonRecA:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span>Non</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div id="champ" class="space-y-3 hidden  input-radio">
+                    <h3>Voulez-vous prendre une assurance pour personnes transportées ?</h3>
+                    <div class="space-x-5 flex">
+                        <div>
+                            <input value="oui" id="ouiAPe" class="peer/ouiAPe hidden" type="radio"
+                                name="assurancePersone" />
+                            <label for="ouiAPe"
+                                class="peer-checked/ouiAPe:bg-blue-500 peer-checked/ouiAPe:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span>Oui</span>
+                            </label>
+                        </div>
+                        <div>
+                            <input value="non" id="nonAPe" class="peer/nonAPe hidden" type="radio"
+                                name="assurancePersone" />
+                            <label for="nonAPe"
+                                class="peer-checked/nonAPe:bg-blue-500 peer-checked/nonAPe:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span>Non</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="champ" class="p-2 space-y-3 flex flex-col hidden input-text">
+                    <label class="block">
+                        <span class="block text-sm font-medium text-slate-700">
+                            Entrez le nombre de places
+                        </span>
+                        <input type="number" name="valNew"
+                            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 duration-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    </label>
+                </div>
+
+
+
+                <div id="champ" class="space-y-3 hidden  input-radio">
+                    <h3>Formule souhaité ?</h3>
+                    <div class="space-x-5 flex">
+                        <div>
+                            <input id="Forf1" class="peer/Forf1 hidden" type="radio" name="formule" />
+                            <label for="Forf1"
+                                class="peer-checked/Forf1:bg-blue-500 peer-checked/Forf1:text-white shadow flex flex-col items-start shadow-blue-200 duration-300 px-5 bg-blue-50 flex space-y-4  p-4 rounded-lg">
+                                <span class=" font-medium">Forfait 1</span>
+
+                            </label>
+
+                            <div class=" bg-blue-500 flex-col bg-transparent hidden h-full peer-checked/Forf1:flex">
+                                <div class="flex justify-between items-center px-3 space-x-16 border-b py-5">
+                                    <span>Capital déces</span> <span class="text-xl font-semibold">1.000.000</span>
+
+                                </div>
+                                <div class="flex justify-between items-center px-3 space-x-16 border-b py-5">
+                                    <span>Capital Infirmité</span> <span class="text-xl font-semibold">1.000.000</span>
+
+                                </div>
+                                <div class="flex justify-between items-center px-3 space-x-16 py-5">
+                                    <span>Frais medicaux</span> <span class="text-xl font-semibold">100.000</span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <input id="Forf2" class="peer/Forf2 hidden" type="radio" name="formule" />
+                            <label for="Forf2"
+                                class="peer-checked/Forf2:bg-blue-500 peer-checked/Forf2:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span class=" font-medium">Forfait 2</span>
+
+                            </label>
+
+                            <div class=" bg-blue-500 flex-col bg-transparent hidden h-full peer-checked/Forf2:flex">
+                                <div class="flex justify-between items-center px-3 space-x-16 border-b py-5">
+                                    <span>Capital déces</span> <span class="text-xl font-semibold">2.000.000</span>
+
+                                </div>
+                                <div class="flex justify-between items-center px-3 space-x-16 border-b py-5">
+                                    <span>Capital Infirmité</span> <span class="text-xl font-semibold">2.000.000</span>
+
+                                </div>
+                                <div class="flex justify-between items-center px-3 space-x-16 py-5">
+                                    <span>Frais medicaux</span> <span class="text-xl font-semibold">200.000</span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <input id="Forf3" class="peer/Forf3 hidden" type="radio" name="formule" />
+                            <label for="Forf3"
+                                class="peer-checked/Forf3:bg-blue-500 peer-checked/Forf3:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span class=" font-medium">Forfait 3</span>
+
+                            </label>
+
+                            <div class=" bg-blue-500 flex-col bg-transparent hidden h-full peer-checked/Forf3:flex">
+                                <div class="flex justify-between items-center px-3 space-x-16 border-b py-5">
+                                    <span>Capital déces</span> <span class="text-xl font-semibold">3.000.000</span>
+
+                                </div>
+                                <div class="flex justify-between items-center px-3 space-x-16 border-b py-5">
+                                    <span>Capital Infirmité</span> <span class="text-xl font-semibold">3.000.000</span>
+
+                                </div>
+                                <div class="flex justify-between items-center px-3 space-x-16 py-5">
+                                    <span>Frais medicaux</span> <span class="text-xl font-semibold">300.000</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="champ" class="space-y-3 hidden input-radio">
+                    <h3>Choisissez une periode de couverture</h3>
+                    <div class="space-x-5 flex">
+                        <div>
+                            <input id="perY" class="peer/perY hidden" type="radio" name="periodeCouv" />
+                            <label for="perY"
+                                class="peer-checked/perY:bg-blue-500 peer-checked/perY:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span>Par an </span>
+                            </label>
+                        </div>
+                        <div>
+                            <input id="perM" class="peer/perM hidden" type="radio" name="periodeCouv" />
+                            <label for="perM"
+                                class="peer-checked/perM:bg-blue-500 peer-checked/perM:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span>Par mois</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="champ" class="space-y-3 hidden  input-radio">
+                    <h3>Voulez-vous prendre une assurance de dommages au vehicule</h3>
+                    <div class="space-x-5 flex">
+                        <div>
+                            <input value="oui" id="ouiDV" class="peer/ouiDV hidden" type="radio"
+                                name="dommageVehicule" />
+                            <label for="ouiDV"
+                                class="peer-checked/ouiDV:bg-blue-500 peer-checked/ouiDV:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span>Oui</span>
+                            </label>
+                        </div>
+                        <div>
+                            <input value="non" id="nonDV" class="peer/nonDV hidden" type="radio"
+                                name="dommageVehicule" />
+                            <label for="nonDV"
+                                class="peer-checked/nonDV:bg-blue-500 peer-checked/nonDV:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span>Non</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="champ" class="p-2 space-y-3 flex flex-col hidden  input-text">
+                    <label>
+                        <span class="block text-sm font-medium text-slate-700">
+                            Quelle est la valeur neuve de votre véhicule ?
+                        </span>
+                        <input type="number" name="valNew"
+                            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 duration-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    </label>
+                    <!-- <button class="self-end bg-blue-500 px-3 py-2 rounded-lg text-white">Continuer</button> -->
+                </div>
+                <div id="champ" class="p-2 space-y-3 flex flex-col hidden input-text">
+                    <label class="block">
+                        <span class="block text-sm font-medium text-slate-700">
+                            Quelle est la valeur vénale (actuelle) de votre véhicule ?
+                        </span>
+                        <input type="number" name="valNew"
+                            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 duration-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
+                    </label>
+                    <!-- <button class="self-end bg-blue-500 px-3 py-2 rounded-lg text-white">Continuer</button> -->
+                </div>
+
+                <div id="champ" class="space-y-3 hidden input-radio">
+                    <h3>
+                        Voulez-vous prendre une assurance tout risque ?
+                    </h3>
+                    <div class="space-x-5 flex">
+                        <div>
+                            <input id="ouiATRisk" class="peer/ouiATRisk hidden" type="radio" name="assuTtRisq" />
+                            <label for="ouiATRisk"
+                                class="peer-checked/ouiATRisk:bg-blue-500 peer-checked/ouiATRisk:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span>Oui</span>
+                            </label>
+                        </div>
+                        <div>
+                            <input id="nonATRisk" class="peer/nonATRisk hidden" type="radio" name="assuTtRisq" />
+                            <label for="nonATRisk"
+                                class="peer-checked/nonATRisk:bg-blue-500 peer-checked/nonATRisk:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span>Non</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="champ" class="space-y-3 hidden input-radio">
+                    <h3>
+                        Voulez-vous prendre une couverture pour vol/vol à main armée ?
+                    </h3>
+                    <div class="space-x-5 flex">
+                        <div>
+                            <input id="oui" class="peer/oui hidden" type="radio" name="couvertureVol" />
+                            <label for="oui"
+                                class="peer-checked/oui:bg-blue-500 peer-checked/oui:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span>Oui</span>
+                            </label>
+                        </div>
+                        <div>
+                            <input id="non" class="peer/non hidden" type="radio" name="couvertureVol" />
+                            <label for="non"
+                                class="peer-checked/non:bg-blue-500 peer-checked/non:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span>Non</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="champ" class="space-y-3 hidden input-radio">
+                    <h3>Voulez-vous prendre une assurance incendie ?</h3>
+                    <div class="space-x-5 flex">
+                        <div>
+                            <input id="ouiAsI" class="peer/ouiAsI hidden" type="radio" name="assuranceIncendie" />
+                            <label for="ouiAsI"
+                                class="peer-checked/ouiAsI:bg-blue-500 peer-checked/ouiAsI:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span>Oui</span>
+                            </label>
+                        </div>
+                        <div>
+                            <input id="nonAsI" class="peer/nonAsI hidden" type="radio" name="assuranceIncendie" />
+                            <label for="nonAsI"
+                                class="peer-checked/nonAsI:bg-blue-500 peer-checked/nonAsI:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span>Non</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="champ" class="space-y-3 hidden input-radio">
+                    <h3>Voulez-vous prendre une assurance bris de glace ?</h3>
+                    <div class="space-x-5 flex">
+                        <div>
+                            <input id="ouiAsB" class="peer/ouiAsB hidden" type="radio" name="assuranceBrise" />
+                            <label for="ouiAsB"
+                                class="peer-checked/ouiAsB:bg-blue-500 peer-checked/ouiAsB:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span>Oui</span>
+                            </label>
+                        </div>
+                        <div>
+                            <input id="nonAsB" class="peer/nonAsB hidden" type="radio" name="assuranceBrise" />
+                            <label for="nonAsB"
+                                class="peer-checked/nonAsB:bg-blue-500 peer-checked/nonAsB:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <span>Non</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="bouton-validation" type="button" onclick="validateChamps()"
+                    class="self-end bg-blue-500 px-3 py-2 rounded-lg text-white hidden">
+                    Continuer
+                </button>
+            </div>
+
+            <button type="submit" id="bouton-validation-final"
+                class="self-end hidden bg-blue-500 p-4 rounded-lg text-white">
+                Voir les assurances disponible
+            </button>
+        </form>
+
+
+
+
+
+    </div>
+
+    <script>
+        // Récupérer tous les champs de saisie de type texte
+        const champsTexte = document.querySelectorAll("#champ");
+        console.log(champsTexte.length, 'champs')
+        let close = false
+        const boutonValidationFinal = document.getElementById(
+            "bouton-validation-final"
+        );
+        let champIndex = 0;
+        // Ajouter un événement "input" à chaque champ de texte pour surveiller les saisies
+        champsTexte.forEach((champ, index) => {
+
+            console.log(index, 'ind')
+
+            if (champ.classList.contains("input-text")) {
+
+                champ.addEventListener("input", () => afficherBoutonValidation(index));
+            } else {
+
+                if (champ.querySelector('[name="assurancePersone"]')) {
+                    console.log('tes la', index)
+                    const selects = champ.querySelectorAll('[name="assurancePersone"]');
+
+                    selects.forEach(select => select.addEventListener("change", (event) => event.target.value == 'non' ? skipOption(index, event.target.value) : validateChamps(index)));
+
+
+                    // const nonAsB = champ.querySelectorByName("#nonAsB");
+                    // const ouiAsB = champ.querySelectorByName("#ouiAsB");
+                    // nonAsB.addEventListener("change", (event) => Canceloption(index , event.target.value))
+                    // ouiAsB.addEventListener("change", () => validateChamps( index )
+
+
+                    //    );
+
+
+                } else if (champ.querySelector('[name="dommageVehicule"]')) {
+                    const selects = champ.querySelectorAll('[name="dommageVehicule"]');
+
+                    selects.forEach(select => select.addEventListener("change", (event) => event.target.value == 'non' ? Canceloption(index, event.target.value) : validateChamps(index)));
+                    console.log('chuila aussi', index)
+
+                } else if (champ.querySelector('[name="assuTtRisq"]')) {
+                    console.log('chuila', index)
+                    const selects = champ.querySelectorAll('[name="assuTtRisq"]');
+
+                    selects.forEach(select => select.addEventListener("change", (event) => event.target.value == 'oui' ? Canceloption(index, event.target.value) : validateChamps(index)));
+
+
+                } else {
+
+                    champ.addEventListener("input", () => validateChamps(close == false ? index : index + 1));
+                }
+
+                // if(champ.querySelector("#nonAsB").value== 'non'){
+                //     champ.addEventListener("input", () => Canceloption());
+                // }
+
+
+
+
+
+
+
+
+            }
+        });
+
+        function returnToHome() {
+            history.back();
+        }
+        // Fonction pour afficher le bouton de validation lorsque l'un des champs de texte est rempli
+        function afficherBoutonValidation(index) {
+            boutonValidationFinal.classList.add("hidden");
+            if (index === champIndex || index == undefined) {
+                const boutonValidation = document.getElementById("bouton-validation");
+
+                boutonValidation.classList.remove("hidden");
+                boutonValidation.classList.add("block");
+
+            }
+        }
+
+        function validateChamps(index) {
+            close = false
+
+            console.log(index, 'index', champIndex, "champIndex celui qu'on va selectionner")
+
+            const boutonValidation = document.getElementById("bouton-validation");
+            if (index === champIndex || index == undefined) {
+
+                boutonValidation.classList.add("hidden");
+                boutonValidation.classList.remove("block");
+                boutonValidationFinal.classList.add("hidden");
+
+
+                if (champIndex + 1 == champsTexte.length) {
+                    boutonValidationFinal.classList.remove("hidden");
+                    // boutonValidationFinal.classList.add("block");
+                } else {
+                    champsTexte[champIndex + 1].classList.remove("hidden");
+                }
+
+                if (index) {
+                    champIndex = index + 1
+
+                    console.log('commmmment')
+                } else {
+                    champIndex++
+                }
+
+
+
+            }
+            else if (index == 7) {
+
+                console.log('tu change')
+                champIndex = 8
+
+                champsTexte[champIndex].classList.remove("hidden");
+                let aDelete = champsTexte.length - index
+
+                for (let i = 1; i < aDelete; i++) {
+                    champsTexte[champIndex + i].classList.add("hidden");
+
+
+                }
+
+                if (index) {
+                    champIndex = index + 1
+
+                    console.log('commmmment')
+                } else {
+                    champIndex++
+                }
+            }
+
+        }
+
+
+        function skipOption(index) {
+            console.log(index, 'jai clique', champIndex)
+
+            if (index == champIndex) {
+                champIndex = 11
+
+                champsTexte[champIndex].classList.remove("hidden");
+            }
+            else {
+
+                let aDelete = champsTexte.length - index
+
+                for (let i = 1; i < aDelete; i++) {
+                    champsTexte[index + i].classList.add("hidden");
+
+
+                }
+
+                champIndex = 11
+                champsTexte[champIndex].classList.remove("hidden");
+            }
+
+
+
+        }
+        function Canceloption(index, value) {
+            close = true
+            console.log(value)
+            // Vous pouvez mettre ici le code de la fonction que vous souhaitez exécuter
+            // en fonction de l'option sélectionnée.
+            // Par exemple :
+            boutonValidationFinal.classList.remove("hidden");
+            let aDelete = champsTexte.length - index
+
+            for (let i = 1; i < aDelete; i++) {
+                champsTexte[index + i].classList.add("hidden");
+
+
+            }
+
+            champIndex = index
+
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'blue-500': '#02368A',
+              }
+            }
+          }
+        }
+      </script>
+    <title>Assurance disponible</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="min-h-screen flex w-full">
+    <div class="w-[50%] flex flex-col justify-center items-center space-y-5">
+        <div class="space-y-10 bg-white p-10 rounded-lg">
+            <h4 class="text-2xl font-medium">Récapitulatif</h4>
+
+            <h5 class="text-xl font-medium">Détails du véhicule</h5>
+
+            <div class="space-y-3 space-x-5 bg-blue-100 rounded-lg py-5 px-10 text-gray-700">
+                <h4>Valeur neuve du véhicule :</h4>
+                <span class="font-semibold text-2xl">1 000 000 Francs CFA</span>
+            </div>
+
+            <div class="space-y-3 space-x-5 bg-blue-100 rounded-lg py-5 px-10 text-gray-700">
+                <h4>Valeur vénale du véhicule :</h4>
+                <span class="font-semibold text-2xl">500 000 Francs CFA</span>
+            </div>
+
+            <h5 class="text-xl font-medium">Options</h5>
+
+            <div class="flex items-center justify-between bg-blue-100 px-5 rounded-lg">
+                <div class="space-y-3 space-x-5 rounded-lg py-5 px-10 text-gray-700">
+                    <span class="font-medium text-lg">Couverture pour vol</span>
+                </div>
+
+                <button>
+                    <svg width="40" height="40" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                        <g id="galaRemove0" fill="none" stroke="#000000" stroke-dasharray="none" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-miterlimit="4" stroke-opacity="1" stroke-width="16">
+                            <circle id="galaRemove1" cx="128" cy="128" r="112" />
+                            <path id="galaRemove2" d="M 80.000004,128 H 176.00001" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="flex items-center justify-between bg-blue-100 px-5 rounded-lg">
+                <div class="space-y-3 space-x-5 rounded-lg py-5 px-10 text-gray-700">
+                    <span class="font-medium text-lg">Assurance incendie</span>
+                </div>
+
+                <button>
+                    <svg width="40" height="40" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                        <g id="galaRemove0" fill="none" stroke="#000000" stroke-dasharray="none" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-miterlimit="4" stroke-opacity="1" stroke-width="16">
+                            <circle id="galaRemove1" cx="128" cy="128" r="112" />
+                            <path id="galaRemove2" d="M 80.000004,128 H 176.00001" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="flex items-center justify-between bg-blue-100 px-5 rounded-lg">
+                <div class="space-y-3 space-x-5 rounded-lg py-5 px-10 text-gray-700">
+                    <span class="font-medium text-lg">Assurance bris de glace</span>
+                </div>
+
+                <button>
+                    <svg width="40" height="40" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                        <g id="galaRemove0" fill="none" stroke="#000000" stroke-dasharray="none" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-miterlimit="4" stroke-opacity="1" stroke-width="16">
+                            <circle id="galaRemove1" cx="128" cy="128" r="112" />
+                            <path id="galaRemove2" d="M 80.000004,128 H 176.00001" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="w-[50%] flex-none bg-light-700 p-10 bg-white min-h-screen drop-shadow-xl">
+        <div class="space-y-10">
+            <h2 class="text-3xl font-semibold">Assurances disponibles</h2>
+
+            <div class="flex flex-col w-full">
+                <div class="border-b p-5 flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="h-20 w-20 rounded-full overflow-hidden">
+                            <img class="object-cover w-full h-full"
+                                src="https://img.freepik.com/free-vector/branding-identity-corporate-abstract-logo-vector-design-template_460848-13937.jpg?size=626&ext=jpg&ga=GA1.2.1258221571.1687256096&semt=country_rows_v1"
+                                alt="" />
+                        </div>
+
+                        <div class="flex space-y-2 flex-col">
+                            <span class="text-xl font-bold">CIMEF - Assurances</span>
+                            <span>150 000 Francs CFA</span>
+                        </div>
+                    </div>
+
+                    <button id="ouvrirModal" type="button" class="bg-blue-500 px-3 py-2 rounded-lg text-white">
+                        Procéder au paiement
+                    </button>
+                </div>
+
+                <div class="border-b p-5 flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="h-20 w-20 rounded-full overflow-hidden">
+                            <img class="object-cover w-full h-full"
+                                src="https://img.freepik.com/free-vector/logo-branding-identity-corporate-vector-design_460848-9756.jpg?size=626&ext=jpg&ga=GA1.2.1258221571.1687256096&semt=country_rows_v1"
+                                alt="" />
+                        </div>
+
+                        <div class="flex space-y-2 flex-col">
+                            <span class="text-xl font-bold">LEADERS AXA ASSURANCE</span>
+                            <span>250 000 Francs CFA</span>
+                        </div>
+                    </div>
+
+                    <button type="button" class="bg-blue-500 px-3 py-2 rounded-lg text-white">
+                        Procéder au paiement
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-contenu w-[60rem] min-h-[30rem]">
+            <div class="border-b px-5 pb-5 pt-3 flex items-center justify-between">
+                <h2 class="text-2xl font-semibold">Procedure du paiement</h2>
+
+                <button id="fermerModal">
+                    <svg width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#000000"
+                            d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="p-5 space-y-5">
+                <p class="">
+                    Pour effectuer le paiment du services, veuillez suivre la procédure
+                    suivante :
+                </p>
+
+                <ul class="list-decimal space-y-3 ml-5">
+                    <li>Sélectionnez le service Mobile Money de votre opérateur.</li>
+
+                    <li>
+                        Effectuez le dépôt sur le numéro de compte qui vous sera fourni
+                        lors de la demande de paiement.
+                    </li>
+                    <li>
+                        Une fois que vous avez effectué le dépôt, nous vous demandons de
+                        nous envoyer une photo montrant la confirmation du dépôt
+                    </li>
+                </ul>
+
+                <div class="flex flex-col">
+                    <div class="flex justify-around">
+                        <div>
+                            <input onchange="afficherContenu('orange')" id="orange" class="peer/orange hidden"
+                                type="radio" name="mobile-money" />
+                            <label for="orange"
+                                class="peer-checked/orange:border-blue-500 border-2 border-transparent peer-checked/orange:text-blue-500 shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <div class="flex space-x-3 items-center">
+                                    <div class="h-14 w-14 overflow-hidden">
+                                        <img class="w-full h-full peer-checked/orange:scale-110 object-contain"
+                                            src="assets/orange.png" alt="" />
+                                    </div>
+                                    <span class="text-xl font-medium">Orange</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div>
+                            <input onchange="afficherContenu('mtn')" id="mtn" class="peer/mtn hidden" type="radio"
+                                name="mobile-money" />
+                            <label for="mtn"
+                                class="peer-checked/mtn:border-blue-500 border-2 border-transparent peer-checked/mtn:text-blue-500 shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <div class="flex space-x-3 items-center">
+                                    <div class="h-14 w-14 overflow-hidden">
+                                        <img class="w-full h-full peer-checked/mtn:scale-110 object-contain"
+                                            src="assets/mtn.png" alt="" />
+                                    </div>
+                                    <span class="text-xl font-medium">MTN</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div>
+                            <input onchange="afficherContenu('moov')" id="moov" class="peer/moov hidden" type="radio"
+                                name="mobile-money" />
+                            <label for="moov"
+                                class="peer-checked/moov:border-blue-500 border-2 border-transparent peer-checked/moov:text-blue-500 shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <div class="flex space-x-3 items-center">
+                                    <div class="h-14 w-14 overflow-hidden">
+                                        <img class="w-full h-full peer-checked/moov:scale-110 object-contain"
+                                            src="assets/moov.png" alt="" />
+                                    </div>
+                                    <span class="text-xl font-medium">Moov</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div>
+                            <input onchange="afficherContenu('wave')" id="wave" class="peer/wave hidden" type="radio"
+                                name="mobile-money" />
+                            <label for="wave"
+                                class="peer-checked/wave:border-blue-500 border-2 border-transparent peer-checked/wave:text-blue-500 shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
+                                <div class="flex space-x-3 items-center">
+                                    <div class="h-14 w-14 overflow-hidden">
+                                        <img class="w-full h-full peer-checked/wave:scale-110 object-contain"
+                                            src="assets/wave.png" alt="" />
+                                    </div>
+                                    <span class="text-xl font-medium">Wave</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+<form action="#" method="post">
+                    <div class="flex items-center justify-center space-x-10 mt-10">
+                        <div id="orangeNumber" style="display: none"
+                            class="bg-orange-100 border-2 w-1/2 border-orange-600 p-3 flex-col space-y-5 rounded-xl">
+                            <span class="text-xl font-medium">Orange Money</span>
+
+                            <div class="flex space-x-3 items-center">
+                                <span>Numero:</span>
+                                <span class="text-2xl font-bold">+225 0000000000</span>
+                            </div>
+                        </div>
+
+                        <div id="mtnNumber" style="display: none"
+                            class="bg-yellow-100 border-2 w-1/2 border-yellow-400 p-3 flex-col space-y-5 rounded-xl">
+                            <span class="text-xl font-medium">MTN Money</span>
+
+                            <div class="flex space-x-3 items-center">
+                                <span>Numero:</span>
+                                <span class="text-2xl font-bold">+225 222222222222</span>
+                            </div>
+                        </div>
+                        <div id="moovNumber" style="display: none"
+                            class="bg-green-100 border-2 w-1/2 border-green-600 p-3 flex-col space-y-5 rounded-xl">
+                            <span class="text-xl font-medium">Moov Money</span>
+
+                            <div class="flex space-x-3 items-center">
+                                <span>Numero:</span>
+                                <span class="text-2xl font-bold">+225 111111111111</span>
+                            </div>
+                        </div>
+                        <div id="waveNumber" style="display: none"
+                            class="bg-blue-100 border-2 w-1/2 border-blue-600 p-3 flex-col space-y-5 rounded-xl">
+                            <span class="text-xl font-medium">Wave</span>
+
+                            <div class="flex space-x-3 items-center">
+                                <span>Numero:</span>
+                                <span class="text-2xl font-bold">+225 333333333333</span>
+                            </div>
+                        </div>
+
+                        <div id="recu" style="display: none" class=" flex-col justify-end space-y-5">
+                            <div  class="h-full flex flex-col space-y-3">
+                                <label for="photo" class="">Importer le recu</label>
+
+                                <input type="file" name="photo"
+                                    class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-500 hover:file:bg-blue-100 duration-300" />
+                            </div>
+
+
+
+                            <button id="bouton-validation" type="submit"
+                                class="self-end bg-blue-500 px-3 py-2 rounded-lg text-white ">
+                                Valider
+                            </button>
+                        </div>
+
+
+
+                    </div>
+
+                </form>
+
+
+
+                <div class=" flex justify-center space-y-8 flex-col items-center">
+
+<div class="w-1/2 h-1/2 ">
+    <img class="w-full h-full object-contain" src="assets/sucess.svg" alt="">
+</div>
+                   
+
+<h2 class="text-2xl font-semibold">Procedure du paiement effectué</h2>
+<p>Vous recevrez un email de confirmation</p>
+
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fonction pour ouvrir la modal
+        function ouvrirModal() {
+            document.getElementById("modal").style.display = "block";
+        }
+
+        // Fonction pour fermer la modal
+        function fermerModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        // Écouteurs d'événements pour les boutons d'ouverture et de fermeture de la modal
+        document
+            .getElementById("ouvrirModal")
+            .addEventListener("click", ouvrirModal);
+        document
+            .getElementById("fermerModal")
+            .addEventListener("click", fermerModal);
+
+        function afficherContenu(option) {
+            // Cacher tous les contenus
+            document.getElementById("recu").style.display = "flex";
+            document.getElementById("orangeNumber").style.display = "none";
+            document.getElementById("mtnNumber").style.display = "none";
+
+            document.getElementById("moovNumber").style.display = "none";
+            document.getElementById("waveNumber").style.display = "none";
+
+            console.log(document.getElementById("orangeNumber"));
+
+            // Afficher le contenu correspondant à l'option sélectionnée
+            if (option === "orange") {
+                document.getElementById("orangeNumber").style.display = "block";
+            } else if (option === "mtn") {
+                document.getElementById("mtnNumber").style.display = "block";
+            } else if (option === "moov") {
+                document.getElementById("moovNumber").style.display = "block";
+            } else {
+                document.getElementById("waveNumber").style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>
