@@ -266,21 +266,21 @@
                             <input id="per6M" class="peer/per6M hidden" type="radio" name="periodeCouv" />
                             <label for="per6M"
                                 class="peer-checked/per6M:bg-blue-500 peer-checked/per6M:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
-                                <span>sous 3  mois</span>
+                                <span>sous 3 mois</span>
                             </label>
                         </div>
                         <div>
                             <input id="perM" class="peer/perM hidden" type="radio" name="periodeCouv" />
                             <label for="perM"
                                 class="peer-checked/perM:bg-blue-500 peer-checked/perM:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
-                                <span>sous 6  mois</span>
+                                <span>sous 6 mois</span>
                             </label>
                         </div>
                     </div>
                 </div>
 
 
-                <div id="champ" class="space-y-3 hidden  input-radio">
+                <!-- <div id="champ" class="space-y-3 hidden  input-radio">
                     <h3>Voulez-vous prendre une assurance de dommages au vehicule</h3>
                     <div class="space-x-5 flex">
                         <div>
@@ -300,7 +300,7 @@
                             </label>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
 
                 <div id="champ" class="p-2 space-y-3 flex flex-col hidden  input-text">
@@ -330,14 +330,16 @@
                     </h3>
                     <div class="space-x-5 flex">
                         <div>
-                            <input id="ouiATRisk" value="oui" class="peer/ouiATRisk hidden" type="radio" name="assuTtRisq" />
+                            <input id="ouiATRisk" value="oui" class="peer/ouiATRisk hidden" type="radio"
+                                name="assuTtRisq" />
                             <label for="ouiATRisk"
                                 class="peer-checked/ouiATRisk:bg-blue-500 peer-checked/ouiATRisk:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
                                 <span>Oui</span>
                             </label>
                         </div>
                         <div>
-                            <input id="nonATRisk" value="non" class="peer/nonATRisk hidden" type="radio" name="assuTtRisq" />
+                            <input id="nonATRisk" value="non" class="peer/nonATRisk hidden" type="radio"
+                                name="assuTtRisq" />
                             <label for="nonATRisk"
                                 class="peer-checked/nonATRisk:bg-blue-500 peer-checked/nonATRisk:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
                                 <span>Non</span>
@@ -368,7 +370,7 @@
                         </div>
                     </div>
                 </div>
-                 <div id="champ" class="space-y-3 hidden input-radio">
+                <div id="champ" class="space-y-3 hidden input-radio">
                     <h3>
                         Voulez-vous prendre une couverture pour vol accessoire ?
                     </h3>
@@ -427,18 +429,20 @@
                         </div>
                     </div>
                 </div>
-                   <div id="champ" class="space-y-3 hidden input-radio">
+                <div id="champ" class="space-y-3 hidden input-radio">
                     <h3>Voulez-vous prendre une assurance pour dommage collision ?</h3>
                     <div class="space-x-5 flex">
                         <div>
-                            <input id="ouiADC" class="peer/ouiADC hidden" type="radio" name="assuranceDommageCollision" />
+                            <input id="ouiADC" class="peer/ouiADC hidden" type="radio"
+                                name="assuranceDommageCollision" />
                             <label for="ouiADC"
                                 class="peer-checked/ouiADC:bg-blue-500 peer-checked/ouiADC:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
                                 <span>Oui</span>
                             </label>
                         </div>
                         <div>
-                            <input id="nonADC" class="peer/nonADC hidden" type="radio" name="assuranceDommageCollision" />
+                            <input id="nonADC" class="peer/nonADC hidden" type="radio"
+                                name="assuranceDommageCollision" />
                             <label for="nonADC"
                                 class="peer-checked/nonADC:bg-blue-500 peer-checked/nonADC:text-white shadow shadow-blue-200 duration-300 px-5 bg-blue-50 flex items-center p-4 rounded-lg">
                                 <span>Non</span>
@@ -500,13 +504,7 @@
                     //    );
 
 
-                } else if (champ.querySelector('[name="dommageVehicule"]')) {
-                    const selects = champ.querySelectorAll('[name="dommageVehicule"]');
-
-                    selects.forEach(select => select.addEventListener("change", (event) => event.target.value == 'non' ? Canceloption(index, event.target.value) : validateChamps(index)));
-                    console.log('chuila aussi', index)
-
-                } else if (champ.querySelector('[name="assuTtRisq"]')) {
+                }  else if (champ.querySelector('[name="assuTtRisq"]')) {
                     console.log('chuila', index)
                     const selects = champ.querySelectorAll('[name="assuTtRisq"]');
 
